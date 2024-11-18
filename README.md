@@ -1,3 +1,9 @@
+# Tampilan Awal
+![1](https://github.com/user-attachments/assets/ad241947-9778-4f99-b64e-e7e67761c15e)
+
+# Tampilan Riwayat
+![2](https://github.com/user-attachments/assets/6f61da52-3a88-4d83-90d0-a07b2c9eae8f)
+
 # flutter_application_1
 
 A new Flutter project.
