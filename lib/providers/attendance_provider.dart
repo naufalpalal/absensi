@@ -13,7 +13,7 @@ class AttendanceProvider with ChangeNotifier {
 
   void toggleAttendance(int index) {
     _students[index].isHadir = !_students[index].isHadir;
-    notifyListeners(); // Notifikasi perubahan state
+    notifyListeners(); // untuk mengganti status kehadiran
   }
 
   // Reset status hadir siswa
@@ -21,7 +21,7 @@ class AttendanceProvider with ChangeNotifier {
     for (var student in _students) {
       student.isHadir = false;
     }
-    notifyListeners();
+    notifyListeners();//dipanggil untuk memberi tahu UI bahwa data telah berubah.
   }
 }
 

@@ -20,6 +20,7 @@ class AttendanceScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 final student = attendanceProvider.students[index];
                 return ListTile(
+                  leading: Icon(Icons.person), // Ikon di sebelah kiri
                   title: Text(student.name),
                   trailing: Checkbox(
                     value: student.isHadir,
@@ -31,7 +32,7 @@ class AttendanceScreen extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: attendanceProvider.students.every((s) => !s.isHadir)
-                ? null //Jika tidak ada yang hadir maka tombol simpan tidak aktif
+                ? null
                 : () {
                     final presentCount = attendanceProvider.students.where((s) => s.isHadir).length;
                     final absentCount = attendanceProvider.students.length - presentCount;
@@ -44,7 +45,14 @@ class AttendanceScreen extends StatelessWidget {
                     ));
                     attendanceProvider.resetAttendance();
                   },
-            child: Text('Simpan Kehadiran'),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.save), // Ikon untuk tombol simpan
+                SizedBox(width: 8),
+                Text('Simpan Kehadiran'),
+              ],
+            ),
           ),
         ],
       ),
